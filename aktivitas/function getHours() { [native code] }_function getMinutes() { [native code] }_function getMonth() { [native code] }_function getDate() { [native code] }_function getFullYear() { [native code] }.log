@@ -1,0 +1,10 @@
+Sat Oct 19 2024 12:21:22 GMT+0700 (Western Indonesia Time) - memulai mengenkripsi file: ./test/file.txt
+Sat Oct 19 2024 12:21:22 GMT+0700 (Western Indonesia Time) - Berhasil Mengenkripsi file ./test/file.txt menjadi test\file_encrypted.txt
+Sat Oct 19 2024 12:38:05 GMT+0700 (Western Indonesia Time) - Memulai mendekripsi file ./test/file_encrypted.txt
+Sat Oct 19 2024 12:38:05 GMT+0700 (Western Indonesia Time) - Berhasil melakukan mendekripsi file ./test/file_encrypted.txt menjad test\file_decrypt.txt
+Sat Oct 19 2024 12:59:01 GMT+0700 (Western Indonesia Time) - memulai mengenkripsi file: ./test/test.txt
+Sat Oct 19 2024 12:59:01 GMT+0700 (Western Indonesia Time) - Berhasil Mengenkripsi file ./test/test.txt menjadi test\test_encrypted.txt
+Sat Oct 19 2024 13:00:57 GMT+0700 (Western Indonesia Time) - Memulai mendekripsi file ./test/test_encrypted.txt
+Sat Oct 19 2024 13:00:57 GMT+0700 (Western Indonesia Time) - Berhasil melakukan mendekripsi file ./test/test_encrypted.txt menjad test\test_decrypt.txt
+Sat Oct 19 2024 13:01:51 GMT+0700 (Western Indonesia Time) - Memulai mendekripsi file ./test/test_encrypted.txt
+Sat Oct 19 2024 13:01:51 GMT+0700 (Western Indonesia Time) - Berhasil melakukan mendekripsi file ./test/test_encrypted.txt menjad test\test_decrypt.txt
