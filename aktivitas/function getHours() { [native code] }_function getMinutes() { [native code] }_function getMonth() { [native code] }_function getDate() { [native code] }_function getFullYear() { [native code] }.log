@@ -1,10 +1,20 @@
-Sat Oct 19 2024 12:21:22 GMT+0700 (Western Indonesia Time) - memulai mengenkripsi file: ./test/file.txt
-Sat Oct 19 2024 12:21:22 GMT+0700 (Western Indonesia Time) - Berhasil Mengenkripsi file ./test/file.txt menjadi test\file_encrypted.txt
-Sat Oct 19 2024 12:38:05 GMT+0700 (Western Indonesia Time) - Memulai mendekripsi file ./test/file_encrypted.txt
-Sat Oct 19 2024 12:38:05 GMT+0700 (Western Indonesia Time) - Berhasil melakukan mendekripsi file ./test/file_encrypted.txt menjad test\file_decrypt.txt
-Sat Oct 19 2024 12:59:01 GMT+0700 (Western Indonesia Time) - memulai mengenkripsi file: ./test/test.txt
-Sat Oct 19 2024 12:59:01 GMT+0700 (Western Indonesia Time) - Berhasil Mengenkripsi file ./test/test.txt menjadi test\test_encrypted.txt
-Sat Oct 19 2024 13:00:57 GMT+0700 (Western Indonesia Time) - Memulai mendekripsi file ./test/test_encrypted.txt
-Sat Oct 19 2024 13:00:57 GMT+0700 (Western Indonesia Time) - Berhasil melakukan mendekripsi file ./test/test_encrypted.txt menjad test\test_decrypt.txt
-Sat Oct 19 2024 13:01:51 GMT+0700 (Western Indonesia Time) - Memulai mendekripsi file ./test/test_encrypted.txt
-Sat Oct 19 2024 13:01:51 GMT+0700 (Western Indonesia Time) - Berhasil melakukan mendekripsi file ./test/test_encrypted.txt menjad test\test_decrypt.txt
+Sun Oct 20 2024 09:51:55 GMT+0700 (Western Indonesia Time) - Memulai mendekripsi file: ./test/test.txt
+Sun Oct 20 2024 09:51:55 GMT+0700 (Western Indonesia Time) - Error: Password salah Error: error:1C80006B:Provider routines::wrong final block length
+Sun Oct 20 2024 09:52:11 GMT+0700 (Western Indonesia Time) - Memulai mengenkripsi file: ./test/test.txt
+Sun Oct 20 2024 09:52:11 GMT+0700 (Western Indonesia Time) - Berhasil mengenkripsi file ./test/test.txt menjadi test\test_encrypted.txt
+Sun Oct 20 2024 09:52:29 GMT+0700 (Western Indonesia Time) - Memulai mendekripsi file: ./test/test.txt
+Sun Oct 20 2024 09:52:29 GMT+0700 (Western Indonesia Time) - Error: Password salah Error: error:1C80006B:Provider routines::wrong final block length
+Sun Oct 20 2024 09:52:38 GMT+0700 (Western Indonesia Time) - Memulai mendekripsi file: ./test/test.txt
+Sun Oct 20 2024 09:52:38 GMT+0700 (Western Indonesia Time) - Error: Password salah Error: error:1C80006B:Provider routines::wrong final block length
+Sun Oct 20 2024 09:57:08 GMT+0700 (Western Indonesia Time) - Memulai mengenkripsi file: ./test/test.txt
+Sun Oct 20 2024 09:57:08 GMT+0700 (Western Indonesia Time) - Berhasil mengenkripsi file ./test/test.txt menjadi test\test_encrypted.txt
+Sun Oct 20 2024 09:57:26 GMT+0700 (Western Indonesia Time) - Memulai mengenkripsi file: ./test/test.txt
+Sun Oct 20 2024 09:57:26 GMT+0700 (Western Indonesia Time) - Berhasil mengenkripsi file ./test/test.txt menjadi test\test_encrypted.txt
+Sun Oct 20 2024 09:57:42 GMT+0700 (Western Indonesia Time) - Memulai mendekripsi file: ./test/test.txt
+Sun Oct 20 2024 09:57:42 GMT+0700 (Western Indonesia Time) - Password yang dimasukan salah Error: error:1C80006B:Provider routines::wrong final block length
+Sun Oct 20 2024 09:57:48 GMT+0700 (Western Indonesia Time) - Memulai mendekripsi file: ./test/test.txt
+Sun Oct 20 2024 09:57:48 GMT+0700 (Western Indonesia Time) - Password yang dimasukan salah Error: error:1C80006B:Provider routines::wrong final block length
+Sun Oct 20 2024 09:58:15 GMT+0700 (Western Indonesia Time) - Memulai mendekripsi file: ./test/test_encrypted.txt
+Sun Oct 20 2024 09:58:15 GMT+0700 (Western Indonesia Time) - Password yang dimasukan salah Error: error:1C800064:Provider routines::bad decrypt
+Sun Oct 20 2024 09:58:19 GMT+0700 (Western Indonesia Time) - Memulai mendekripsi file: ./test/test_encrypted.txt
+Sun Oct 20 2024 09:58:19 GMT+0700 (Western Indonesia Time) - Berhasil mendekripsi file ./test/test_encrypted.txt menjadi test\test_decrypted.txt

@@ -2,41 +2,40 @@ import crypto, { randomBytes } from "crypto";
 import fs from "fs/promises";
 import path from "path";
 import { logActivity } from "./logg";
-import { buffer } from "stream/consumers";
 
-const algorithm = "aes-256-ctr";
+const algorithm = "aes-256-cbc";
 const iv = randomBytes(16);
 
 export async function encryptFile(
-  filPath: string,
+  filePath: string,
   password: string
 ): Promise<void> {
   try {
-    logActivity(`memulai mengenkripsi file: ${filPath}`);
+    logActivity(`Memulai mengenkripsi file: ${filePath}`);
     const key = crypto.scryptSync(password, "salt", 32);
-    const createChiper = crypto.createCipheriv(algorithm, key, iv);
+    const cipher = crypto.createCipheriv(algorithm, key, iv);
 
-    const fileData = await fs.readFile(filPath);
-    const encryptData = Buffer.concat([
-      createChiper.update(fileData),
-      createChiper.final(),
+    const fileData = await fs.readFile(filePath);
+    const encryptedData = Buffer.concat([
+      cipher.update(fileData),
+      cipher.final(),
     ]);
 
-    const encryptFilePath = path.join(
-      path.dirname(filPath),
-      path.basename(filPath, path.extname(filPath)) + "_encrypted.txt"
+    const encryptedFilePath = path.join(
+      path.dirname(filePath),
+      path.basename(filePath, path.extname(filePath)) + "_encrypted.txt"
     );
 
-    await fs.writeFile(encryptFilePath, Buffer.concat([iv, encryptData]));
+    await fs.writeFile(encryptedFilePath, Buffer.concat([iv, encryptedData]));
     logActivity(
-      `Berhasil Mengenkripsi file ${filPath} menjadi ${encryptFilePath}`
+      `Berhasil mengenkripsi file ${filePath} menjadi ${encryptedFilePath}`
     );
 
     console.log(
-      `file '${filPath}' berhasil dienkripsimenjadi '${encryptFilePath}'`
+      `File '${filePath}' berhasil dienkripsi menjadi '${encryptedFilePath}'`
     );
   } catch (error) {
-    logActivity(`Error ketika melakukan enkripsi ${error}`);
+    logActivity(`Error ketika melakukan enkripsi: ${error}`);
   }
 }
 
@@ -45,27 +44,35 @@ export async function decryptFile(
   password: string
 ): Promise<void> {
   try {
-    logActivity(`Memulai mendekripsi file ${filePath}`);
+    logActivity(`Memulai mendekripsi file: ${filePath}`);
     const key = crypto.scryptSync(password, "salt", 32);
     const fileData = await fs.readFile(filePath);
 
     const iv = fileData.slice(0, 16);
-    const encryptData = fileData.slice(16);
+    const encryptedData = fileData.slice(16);
 
-    const dechiper = crypto.createDecipheriv(algorithm, key, iv);
+    const decipher = crypto.createDecipheriv(algorithm, key, iv);
 
-    const decryptData = Buffer.concat([
-      dechiper.update(encryptData),
-      dechiper.final(),
-    ]);
+    let decryptedData: Buffer;
+    try {
+      decryptedData = Buffer.concat([
+        decipher.update(encryptedData),
+        decipher.final(),
+      ]);
+    } catch (error) {
+      logActivity(`Password yang dimasukan salah ${error}`);
+      console.log("Password yang dimasukan salah");
+      return;
+    }
+
     const originalFilePath = path.join(
       path.dirname(filePath),
-      path.basename(filePath, "_encrypted.txt") + "_decrypt.txt"
+      path.basename(filePath, "_encrypted.txt") + "_decrypted.txt"
     );
 
-    await fs.writeFile(originalFilePath, decryptData);
+    await fs.writeFile(originalFilePath, decryptedData);
     logActivity(
-      `Berhasil melakukan mendekripsi file ${filePath} menjad ${originalFilePath}`
+      `Berhasil mendekripsi file ${filePath} menjadi ${originalFilePath}`
     );
 
     console.log(
